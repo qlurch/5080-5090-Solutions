@@ -1,1 +1,20 @@
 { \bf 09.31 }
+Let $\hat{\theta}$ and $\tilde{\theta}$ be the MLE and MME, respectively, for $\theta$ in Exercise 26. \\
+\\
+a) Show that $\hat{\theta}$ is MSE consistent. \\
+From Problem 26, we know that $\hat{\theta}=X_{n:n}$.  
+$\hat{\theta}$ is MSE consistent if $\lim_{n \to \infty} E[X_{n:n}-\theta]^{2} = 0$\\
+Then $\lim_{n \to \infty} E[X_{n:n}-\theta]^{2} = \lim_{n \to \infty}(E[X_{n:n}]^2 - 2\theta E[X_{n:n}]+\theta^2).$\\
+$f_{X_{n:n}(y)}= n (\frac{y}{\theta})^{n-1}$ \\
+$E[X_{n:n}]^2 = \int_0^\theta \mathrm{y^2 n (\frac{y}{\theta})^{n-1}}\, \mathrm{d}y = \frac{n}{\theta^n}(\frac{\theta^{n+2}}{n+2})=\frac{n\theta^2 }{n+2}$\\
+ $E[X_{n:n}]= \int_0^\theta \mathrm{y n (\frac{y}{\theta})^{n-1}}\, \mathrm{d}y=\frac{n \theta^{n+1}}{\theta^n (n+1)} =\frac{n\theta}{n+1}$\\
+ Then we have $\lim_{n \to \infty}(\frac{n\theta^2 }{n+2}-2\theta(\frac{n\theta}{n+1)}+\theta^2)$ which can be simplified to $\lim_{n \to \infty}\frac{2\theta^2}{(n+1)(n+2)}$ where $\frac{2\theta^2}{(n+1)(n+2)} \leq \frac{2\theta^2}{n^2} \rightarrow 0$.  Thus,  $\lim_{n \to \infty} E[X_{n:n}-\theta]^{2} = 0$ and $\hat{\theta}$ is MSE consistent.\\
+ \\
+ b)Show that $\tilde{\theta}$ is MSE consistent.\\
+ From problem 26, we know that $\tilde{\theta}=2\bar{X}$.  $\tilde{\theta}$ is MSE consistent if  $\lim_{n \to \infty} E[2\bar{X} - \theta]^2 =0$.  Then $\lim_{n \to \infty} E[2\bar{X} - \theta]^2 =\lim_{n \to \infty}Var(2\bar{X})+(bias(2\bar{X}))^2)$.  From 26, we know that bias $(2\bar{X})=0$, then $\lim_{n \to \infty} Var(2\bar{X}) =  \lim_{n \to \infty} 4Var(\bar{X})= \lim_{n \to \infty}\frac{4Var(X)}{n}$.\\
+ $Var(X) = E(X^2) - (E(X))^2$.  \\
+ $E(X^2)=\int_0^\theta \mathrm{\frac{x^2}{\theta}}\, \mathrm{d}x = \frac{\theta^2}{3}$\\
+ $E(X) = \int_0^\theta \mathrm{\frac{x}{\theta}}\, \mathrm{d}x = \frac{\theta}{2}$\\
+ $Var(X) = \frac{\theta^2}{3}-\frac{\theta}{2}= \frac{\theta^2}{12}$.\\
+ $\lim_{n \to \infty}\frac{4Var(X)}{n} = \lim_{n \to \infty}\frac{4\theta^2}{12n} = \lim_{n \to \infty}\frac{\theta^2}{3n}=0.$
+ Thus, $\tilde{\theta}$ is MSE consistent.
