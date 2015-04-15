@@ -1,2 +1,11 @@
+{\bf 09.32}
+\section*{Show that the MLE of $\theta$ in Exercise 5 is simple consistent.}
 
-{ \bf 09.32 }
+From problem 5 we see that $f(x ; \theta) = 2\theta^2x^{-3}$ where $\theta \leq x$ and $\theta < 0$. We know that the MLE of $\theta$ is given by the first order statistic, $X_{1:n}$. To show simple consistency, we must show that $\lim P[|X_{1:n} - \theta| < \epsilon] = 1.$ Let $\epsilon > 0$ be given. It follows that
+\begin{align*}
+P[|X_{1:n} - \theta| < \epsilon] &= P[ -\epsilon < X_{1:n} - \theta < \epsilon] \\
+&= P[X_{1:n} - \theta < \epsilon] - P[X_{1:n} - \theta < -\epsilon] \\
+&= P[X_{1:n} < \epsilon + \theta] - P[X_{1:n} < -\epsilon + \theta].
+\end{align*} 
+We know that $\theta \leq X$, and therefore $P[X_{1:n} < -\epsilon + \theta] = 0$. We can see then that $$P[|X_{1:n} - \theta | < \epsilon] = P[X_{1:n} < \epsilon + \theta] = F_{X_{1:n}}(\epsilon + \theta),$$ where $F_{X_{1:n}}$ is the CDF for a first order statistic. We find that $$F_{X_{1:n}}(\epsilon + \theta) = 1 - \left[1 - \frac{\theta^2}{(\epsilon + \theta)^2}\right]^n.$$ As $n$ get large, the term $\left( 1 - \frac{\theta^2}{(\theta + \epsilon)^2}\right)^n$ goes toward 0.
+Therefore, $$\lim P[|X_{1:n} - \theta | < \epsilon] = \lim 1 - [1 - \frac{\theta^2}{(\epsilon + \theta)^2}]^n = 1 - 0 = 1.$$ $\blacksquare$
