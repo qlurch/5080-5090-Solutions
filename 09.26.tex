@@ -1,1 +1,26 @@
 { \bf 09.26 }
+Consider a random sample of size n from a distribution with pdf \\
+$f(x;\theta)=\frac{1}{\theta}$ if $0<x\leq\theta$, and zero otherwise; $0<\theta.$
+
+(a) Find the MLE $\hat{\theta}$.\\
+  \-\hspace{1cm} $\hat{\theta}=X_{n:n}$ 
+
+(b) Find the MME $\tilde{\theta}$.\\
+  \-\hspace{1cm}    $E[X]=\int_{0}^{\theta}\frac{1}{\theta}x dx = \frac{1}{\theta}(\frac{x^2}{2}|^\theta _0)\\ $ \-\hspace{2cm} $=\frac{\theta^2}{2\theta} =\frac{\theta}{2}=\bar{X}$\\
+   \-\hspace{2cm} $\Rightarrow \hat{\theta}=2\bar{X}$
+
+(c) Is the $\hat{\theta}$ unbiased?\\
+   \-\hspace{1cm} No, because $E[\hat{\theta}]=\frac{n}{n + 1}\theta$
+
+(d) Is the $\tilde{\theta}$ unbiased?\\
+    \-\hspace{1cm}Yes, because $E[\bar{\theta}]=\theta$
+    
+(e) Compare the MSEs of the $\hat{\theta}$ and $\tilde{\theta}$.\\
+ \-\hspace{1cm} $MSE(\hat{\theta})= Var(\hat{\theta})+(\frac{\theta n}{n + 1}-\theta)^2$\\
+  \-\hspace{2cm} $= [\frac{n}{n+2}-(\frac{n}{n+1})^2+\frac{1}{(n+1)^2}]\theta^2 = \frac{2\theta^2}{(n+1)(n+2)}$\\
+ \-\hspace{1cm} $MSE(\tilde{\theta})= Var(2\bar{X})= 4Var(\bar{X})=\frac{4}{n}Var(X_1)=\frac{4}{n}\frac{\theta^2}{12}=\frac{\theta^2}{3n}$\\
+ \-\hspace{1cm} So, $MSE(\hat{\theta})$ is smaller unless n=1.
+
+
+
+
