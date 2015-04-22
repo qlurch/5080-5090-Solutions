@@ -1,2 +1,44 @@
 
-{ \bf 08.15 }
+{ \bf 08.15 } Given $X_i \sim N(\mu, \sigma^2)$, $i=1,\dots, n$ and $Z_j \sim N(0, 1)$, $j=1,\dots, k$:\\
+
+a) $X_1 - X_2 = X_1 + (-1)X_2 \sim N\left(\mu + (-1)\mu, (1)^2\sigma^2 + (-1)^2\sigma^2\right) = N(0, 2\sigma^2)$ \\
+
+b) $X_2 + 2X_3 \sim N\left(\mu + (2)\mu, \sigma^2 + (2)^2\sigma^2\right) = N(3\mu, 5\sigma^2)$\\
+
+c) $\frac{X_1 - X_2}{\sigma S_z \sqrt{2}}$:
+\begin{align*}
+\frac{X_1 - X_2}{\sigma S_z \sqrt{2}} &= \frac{Y}{\sigma S_z \sqrt{2}},\;Y=X_1 - X_2 \sim N(0, 2\sigma^2)\\
+ &= \frac{\frac{Y}{\sqrt{2}}}{\sqrt{\frac{V_z}{(k-1)}}} \sim t(k-1), V_z = \frac{(k-1)S^2_z}{\sigma^2}
+\end{align*}
+
+d) $Z^2_1 \sim \chi^2(1)$ (Theorem 8.3.5) \\
+
+e) $\frac{\sqrt{n} (\overline{X} - \mu)}{\sigma S_z}$: \\
+\begin{align*}
+\frac{\sqrt{n} (\overline{X} - \mu)}{\sigma S_z} &= \frac{Z}{S_z},
+  \; Z = \frac{\sqrt{n} (\overline{X} - \mu)}{\sigma} \sim N(0, 1) \\
+  &= \frac{Z}{\sqrt{\frac{V_z}{(k-1)}}} \sim t(k-1), V_z = \frac{(k-1)S^2_z}{\sigma^2}
+\end{align*}
+
+f) $Z^2_1 + Z^2_2 = \chi^2_1(1) + \chi^2_2(1) = \chi^2(2)$ \\
+
+g) $Z^2_1 - Z^2_2$:
+\begin{align*}
+Z^2_1 - Z^2_2 &= \chi^2_1(1) + (-1) \chi^2_2(1) \\
+M_{\chi^2_1(1) - \chi^2_2(1)} &= M_{\chi^2_1(1)} M_{\chi^2_2(-1)} 
+  = \left(\frac{1}{1-2t}\right)^{\frac{1}{2}} \left(\frac{1}{1+2t}\right)^{\frac{1}{2}} \\
+  &=\; ???
+\end{align*}
+Distribution is unknown.\\
+
+h) $\frac{Z^2_1}{\sqrt{Z^2_2}}$:
+\begin{align*}
+\frac{Z^2_1}{\sqrt{Z^2_2}} &= \frac{Z^2_1}{\sqrt{\frac{V}{1}}} \sim t(1),\; Z^2_2\sim \chi^2(1) = V \\
+\end{align*}
+
+i) $\frac{Z^2_1}{Z^2_2}$:
+\begin{align*}
+\frac{Z^2_1}{Z^2_2} &= \frac{\chi^2_1(1)}{\chi^2_2(1)},
+  \; Z^2_1 \sim \chi^2_1(1) = V_1,\; Z^2_2 \sim \chi^2_2(1) = V_2 \\
+  &= \frac{\frac{V_1}{1}}{\frac{V_2}{1}} \sim F(1, 1)
+\end{align*}
