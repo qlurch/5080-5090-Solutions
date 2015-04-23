@@ -1,2 +1,30 @@
+\documentclass[12pt]{article}
+\begin{document}
+{ \bf 10.05 }Let $ X_{1} $, ..., $ X_{n} $ be a random sample from a gamma distribution $ X_{i} \sim $ GAM$ (\theta,2) $. Show that $ S=\sum_{i=1}^{n}X_{i} $ is sufficient for $ \theta $
 
-{ \bf 10.05 }
+(a) by using equation (10.2.1)
+
+\ $$  f(\underline{x}; \theta )=  \left (\frac{1}{\theta^{2}\Gamma(2)} \right )^{n} (\prod_{i=1}^{n}x_{i}) \cdot e^{-\frac{\sum_{i=1}^{n}x_{i}}{\theta}}  $$
+
+Because $ X_{i} \sim $ GAM$ (\theta,2) $, $Y_{i}=\frac{2X_{i}}{\theta} \sim \chi^{2}(4) $ and, therefore $ T=\frac{2S}{\theta}= \sum_{i=1}^{n}Y_{i} \sim \chi^{2}(4n) $.  Using the CDF technique, we can now derive $ f_{S}(s) $
+
+\ $$ F_{S}(s)=P \left\{S \leq s \right\}= P \left\{ \frac{\theta T}{2} \leq s \right\}= P \left\{T \leq \frac{2s}{\theta} \right\}= F_{T}\left(\frac{2s}{\theta}\right) $$
+
+\ $$ f_{S}(s)=\frac{d(F_{S}(s))}{ds}=\frac{d(F_{T}(\frac{2s}{\theta}))}{ds}=\frac{2}{\theta}f_{T}(\frac{2s}{\theta})=\frac{2}{\theta} \cdot \frac{1}{2^{2n}\Gamma(2n)} \cdot \left (\frac{2s}{\theta} \right )^{2n-1} e^{\frac{-s}{\theta}} $$
+
+Combining the results and using the fact that $ \Gamma(2)=1 $,
+
+\ $$ f_{\underline{X}|S}(\underline{x})= \frac {\left (\frac{1}{\theta^{2}\Gamma(2)} \right )^{n} (\prod_{i=1}^{n}x_{i}) \cdot e^{-\frac{\sum_{i=1}^{n}x_{i}}{\theta}}}{\frac{2}{\theta} \cdot \frac{1}{2^{2n}\Gamma(2n)} \cdot \left (\frac{2s}{\theta} \right )^{2n-1} e^{\frac{-s}{\theta}}}= \frac{\Gamma(2n) \prod_{i=1}^{n}x_{i}}{s^{2n-1}} $$
+
+which does not contain $ \theta $, so $ S=\sum_{i=1}^{n}X_{i} $ is sufficient for $ \theta $.
+
+
+
+(b) by the factorization criterion of equation (10.2.3)
+
+\ $$  f(\underline{x}; \theta )=  \left ( \frac{1}{\theta^{2n}} \Gamma(2) \right )^{n}\prod_{i=1}^{n}x_{i}e^{-\frac{\sum_{i=1}^{n}x_{i}}{\theta}}= \left ( \frac{e^{-\frac{s}{\theta}}}{\theta^{2n}} \right) (\prod_{i=1}^{n}x_{i})= g(s;\theta) h( \underline{x}) $$
+
+So $ S=\sum_{i=1}^{n}X_{i} $ is sufficient for $ \theta $.
+
+
+\end{document}
