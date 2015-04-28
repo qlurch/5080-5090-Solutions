@@ -1,2 +1,21 @@
 
-{ \bf 10.10 }
+{ \bf 10.10 } Let $ X_{1}, \ldots, X_{n} $ be a random sample of size $ \it{n} $ from a normal distribution, $ X_{i} \sim $ N($ \mu, \sigma^{2} $).
+\\ \indent (a) Find a single sufficient statistic for $ \mu $ with $ \sigma^{2} $ known.
+\\ \indent (b) Find a single sufficient statistic for $ \sigma^{2} $ with $ \mu $ known.
+\\
+\\ (a) $ f_{\underline{X}}(\underline{x}; \mu, \sigma^{2}) = (2 \pi \sigma^{2})^{\frac{n}{2}} e^{\frac{-\sum_{i=1}^{n}(x_{i}-\mu)^{2}}{2 \sigma^{2}}} = (2 \pi \sigma^{2})^{\frac{n}{2}} e^{\frac{-\sum_{i=1}^{n}(x_{i}^{2}- 2x_{i}\mu+\mu^{2})}{2 \sigma^{2}}} $
+\\
+\\ \indent Let $ S = \sum_{i=1}^{n}X_{i} $, then
+\ $$ f_{\underline{X}}(\underline{x}; \mu, \sigma^{2}) = (2 \pi \sigma^{2})^{\frac{n}{2}} e^{\frac{-\sum_{i=1}^{n}(x_{i}^{2}- 2s\mu+\mu^{2})}{2 \sigma^{2}}} $$
+\ $$ = \left[(2 \pi \sigma^{2})^{\frac{n}{2}} e^{\frac{-\sum_{i=1}^{n}x_{i}^{2}}{2 \sigma^{2}}} \right] \cdot \left(e^{\frac{2ns\mu - n\mu^{2}}{2 \sigma^{2}}} \right) $$
+\\ \indent Since $ \sigma^{2} $ is known, we may treat it as a constant.  Thus, this equation has the form $ h(\underline{x}) \cdot g(s;\mu) $ which satisfies the factorization criterion.  We conclude that $ S = \sum_{i=1}^{n}X_{i} $ is sufficient for $ \mu $.
+\\
+\\ (b) Let $ S = \sum_{i=1}^{n}(X_{i}-\mu)^{2} $ (We may do this since $ \mu $ is known), then
+\\
+\begin{center}
+
+ $ f_{\underline{X}}(\underline{x}; \mu, \sigma^{2}) = (2 \pi \sigma^{2})^{\frac{n}{2}} e^{\frac{-s}{2 \sigma^{2}}} = h(\underline{x}) \cdot g(s;\sigma^{2}) $ where $ h(\underline{x}) = 1 $
+
+\end{center}
+
+This satisfies the factorization criterion, so $ S = \sum_{i=1}^{n}(X_{i}-\mu)^{2} $ is sufficient for $ \sigma^{2} $.
