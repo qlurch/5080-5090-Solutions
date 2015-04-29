@@ -1,2 +1,14 @@
 
-{ \bf 10.11 }
+{ \bf 10.11 } Consider a random sample of size {\it n} from a uniform distribution, $ X_{i} \sim $ UNIF$ (\theta_{1},\theta_{2}) $.
+\\ \indent (a) Show that $ X_{1:n} $ is sufficient for $ \theta_{1} $, if $ \theta_{2} $ is known.
+\\ \indent (b) Show that $ X_{1:n} $ and $ X_{n:n} $ are jointly sufficient for $ \theta_{1} $ and $ \theta_{2} $.
+\\
+\\ (a) $ f_{\underline{X}}(\underline{x}; \theta_{1}, \theta_{2}) = \frac{1}{(\theta_{2}-\theta_{1})^{n}} \cdot I \{\theta_{1} < x_{i} < \theta_{2} \} = \frac{1}{(\theta_{2}-\theta_{1})^{n}} \cdot I \{x_{1:n} > \theta_{1} $, $ x_{n:n} < \theta_{2} \} $
+\ $$ = \frac{1}{(\theta_{2}-\theta_{1})^{n}} \cdot I \{x_{1:n} > \theta_{1} \} \cdot I \{x_{n:n} < \theta_{2} \} $$
+\ $$ = \left(\frac{1}{(\theta_{2}-\theta_{1})^{n}} \cdot I \{x_{1:n} > \theta_{1} \} \right) \left(I \{x_{n:n} < \theta_{2} \} \right) $$
+\ $$ = g(x_{1:n}; \theta_{1}) \cdot h(\underline{x}) $$
+\\ Since $ \theta_{2} $ is known, we may treat it as a constant.  Thus, the factorization criterion is satisfied and $ X_{1:n} $ is sufficient for $ \theta_{1} $.
+\\
+\\ (b) $$ f_{\underline{X}}(\underline{x}; \theta_{1}, \theta_{2}) = \frac{1}{(\theta_{2}-\theta_{1})^{n}} \cdot I \{x_{1:n} > \theta_{1} \} \cdot I \{x_{n:n} < \theta_{2} \} $$
+\ $$ = g(x_{1:n}, x_{n:n}; \theta_{1}, \theta_{2}) \cdot h(\underline{x}) $$
+\\ Where $ h(\underline{x}) = 1 $.  Thus $ X_{1:n} $ and $ X_{n:n} $ are jointly sufficient for $ \theta_{1} $ and $ \theta_{2} $ by the factorization criterion.
